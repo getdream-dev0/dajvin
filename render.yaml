@@ -2,13 +2,13 @@ services:
   - type: web
     name: telegram-prefix-bot
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: python bot.py
     envVars:
       - key: BOT_TOKEN
         sync: false  # Нужно будет добавить вручную в панели Render
-      - key: PREFIX_TEXT
-        value: "Хеллоу"  # Можно изменить на свой текст
+      - key: PYTHON_VERSION
+        value: "3.11.10"
     # Бесплатный план
     plan: free
     # Регион (можно изменить)
